@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAGEMASC</title>
+  <link rel="stylesheet" href="https://use.typekit.net/wji3kkg.css">
+</head>
+
+  <style>
+body {
+  margin: 0;
+  margin-right: 40%;
+  padding-left: 30px;
+  overflow: hidden; 
+  
+  background-image: url('IMAGES/slicedapplebackground.png');
+  background-color: #fdf6c1;
+ /* The overlay color */
+  background-blend-mode: overlay; /* Blends color and image */
+  background-size: cover;
+
+  color: #623927;
+  font-family: "akzidenz-grotesk-next-pro", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 110%;
+}
+
+ /* first two row*/
+.container {
+  max-width: 70%;
+  display: grid;
+  grid-template-columns: 220px 250px 200px 300px;
+  margin-top: 30px;
+  grid-template-rows: 190px 250px;
+  
+}
+
+.container div {
+  justify-items: start; /* Buttons will only be as wide as their text */
+  align-items: start;  
+}
+ /* first two row end*/
+
+ /* last row*/
+.container1{
+  display: grid;
+  grid-template-columns: 190px 160px 250px 300px;
+
+}
+
+.container1 div{
+    max-width: 250px;
+}
+
+ /* last row end*/
+
+
+/* SELECT OPTION START*/
+select, select::picker(select) {
+  appearance: base-select;
+  padding: 0.5em 0.5em;
+  background-color: #ffffff;
+
+  color: #623927;
+  font-family: "akzidenz-grotesk-next-pro", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1em;
+  border: 1px solid;
+
+  position: relative;
+
+}
+
+.dropdown {
+  position: relative;
+}
+
+option {
+  border-color: #8e3b3b;
+  background-color: #ffffff;
+}
+
+option:checked {
+  background-color: #8e3b3b;;
+  color: white;
+}
+/* SELECT OPTION END*/
+
+.image-layer {
+  width: 600px;
+  height: auto;
+  position: absolute;
+  margin-bottom: 30px;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -53%);
+  cursor: auto;
+}
+
+.labell{
+font-family: "fayte-pixel-hard", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 3em;
+line-height: 1em;
+color: rgb(207, 15, 66);
+position: relative;
+
+}   
+
+.image-layer .flip-horiztonal {
+    width: 600px;
+  height: auto;
+  position: absolute;
+  margin-bottom: 30px;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -53%) scaleX(-1);
+  cursor: auto;
+}
+
+#resetButton {
+ bottom: 0; right: 0%;
+  position: absolute;
+  border: none;
+  padding: 15px;
+  background: none;
+  z-index: 100;
+}
+
+#resetButton:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+
+.greenapple{
+  width: 100px;
+}
+
+.thebigred {
+top: 0; right: 0%;
+  border-radius: 70%;
+  padding: 5px;
+  width: 140px;
+  position: absolute;
+  z-index: 100;
+}
+
+.thebigred:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+<div class="hair">
+  <label for="hair" class="labell">Hair:</label>
+
+  <div>
+    <input type="radio" id="blondehair" name="hair" value="IMAGES/HAIR/MASCblonde.png">
+    <label for="blondehair">Golden locks</label>
+  </div>
+
+  <div>
+    <input type="radio" id="combover" name="hair" value="IMAGES/HAIR/MASCcombover.png">
+    <label for="combover">Combover</label>
+  </div>
+
+  <div>
+    <input type="radio" id="curlyhair" name="hair" value="IMAGES/HAIR/MASCcurlyhair.png">
+    <label for="curlyhair">Luscious curls</label>
+  </div>
+
+  <div>
+    <input type="radio" id="modhair" name="hair" value="IMAGES/HAIR/MASCmod.png">
+    <label for="modhair">Mod-mullet something</label>
+  </div>
+
+  <div>
+    <input type="radio" id="nohair" name="hair" value="">
+    <label for="nohair">Male pattern baldness hit too early &#x1F494;</label>
+  </div>
+</div>
+
+<div class="socks">
+  <label for="socks" class="labell">Socks:</label>
+  <div>
+    <input type="radio" id="socks1" name="socks" value="IMAGES/ACCESSORIES/MASCsocksclean.png">
+    <label for="socks1">Socks</label>
+  </div>
+
+    <div>
+    <input type="radio" id="dirtysocks" name="socks" value="IMAGES/ACCESSORIES/MASCsocksdirty.png">
+    <label for="dirtysocks">Socks but dirty</label>
+  </div>
+
+    <div>
+    <input type="radio" id="nosocks" name="socks" value="">
+    <label for="nosocks">No socks (you psycho)</label>
+  </div>
+
+</div>
+
+<div class="tops">
+  <label for="tops" class="labell">Tops:</label>
+  <div>
+    <input type="radio" id="acneshirt" name="tops" value="IMAGES/TOPS/MASCacneshirt.png">
+    <label for="acneshirt">$400 T-shirt</label>
+  </div>
+  <div>
+    <input type="radio" id="longsleeve" name="tops" value="IMAGES/TOPS/MASClongsleeve.png">
+    <label for="longsleeve">Lululemon long sleeve</label>
+  </div>
+  <div>
+    <input type="radio" id="lululemontop" name="tops" value="IMAGES/TOPS/MASClululemontop.png">
+    <label for="lululemontop">Lululemon short sleeve</label>
+  </div>
+
+  <div>
+    <input type="radio" id="quarterzip" name="tops" value="IMAGES/JACKETS/MASCquarterzip.png">
+    <label for="quarterzip">The quarter zip</label>
+  </div>
+
+  <div>
+    <input type="radio" id="notops" name="tops" value="">
+    <label for="notops">#freethenip</label>
+  </div>
+</div>
+
+<div class="shoes">
+  <label for="shoes" class="labell">Shoes:</label>
+  <div>
+    <input type="radio" id="cowboyboots" name="shoes" value="IMAGES/SHOES/MASCcowboyboots.png">
+    <label for="cowboyboots">Cowboy Boots</label>
+  </div>
+
+  <div>
+    <input type="radio" id="gats" name="shoes" value="IMAGES/SHOES/MASCgats.png">
+    <label for="gats">Margiela Gats</label>
+  </div>
+
+  <div>
+    <input type="radio" id="goldengoose" name="shoes" value="IMAGES/SHOES/MASCgoldengoose.png">
+    <label for="goldengoose">Shoes with weird thick soles </label>
+  </div>
+
+  <div>
+    <input type="radio" id="loafers" name="shoes" value="IMAGES/SHOES/MASCloafers.png">
+    <label for="loafers">Doc Martin's cherry loafers</label>
+  </div>
+
+  <div>
+    <input type="radio" id="sambas" name="shoes" value="IMAGES/SHOES/MASCsambas.png">
+    <label for="sambas">Sambas</label>
+  </div>
+
+  <div>
+    <input type="radio" id="tigers" name="shoes" value="IMAGES/SHOES/MASCtigers.png">
+    <label for="tigers">Kill Bill shoes</label>
+  </div>
+
+  <div>
+    <input type="radio" id="noshoes" name="shoes" value="">
+    <label for="noshoes">No shoes. #YOLO</label>
+  </div>
+</div>
+
+<div class="pants">
+  <label for="pants" class="labell">Pants:</label>
+  <div>
+    <input type="radio" id="corporatepants" name="bottoms" value="IMAGES/BOTTOMS/MASCcorporatepants.png">
+    <label for="corporatepants">Slacks</label>
+  </div>
+
+  <div>
+    <input type="radio" id="graypants" name="bottoms" value="IMAGES/BOTTOMS/MASCgraypants.png">
+    <label for="graypants">Trendy baggy Zara jeans</label>
+  </div>
+
+  <div>
+    <input type="radio" id="jeans" name="bottoms" value="IMAGES/BOTTOMS/MASCjeans.png">
+    <label for="jeans">Trendy baggy H&M jeans</label>
+  </div>
+
+  <div>
+    <input type="radio" id="lulushorts" name="bottoms" value="IMAGES/BOTTOMS/MASClulushorts.png">
+    <label for="lulushorts">Lululemon running shorts. Good for running by the water in FiDi.</label>
+  </div>
+
+  <div>
+    <input type="radio" id="nobottoms" name="bottoms" value="">
+    <label for="nobottoms">Put some pants on, weirdo.</label>
+  </div>
+</div>
+
+<div class="accessories">
+  <label for="accessories" class="labell">Accessories:</label>
+  <div>
+    <input type="checkbox" id="arcteryx" data-layer="arcteryx" value="IMAGES/ACCESSORIES/MASCarcteryx.png">
+    <label for="arcteryx">Arcteryx beanie</label>
+  </div>
+  <div>
+    <input type="checkbox" id="beanie" data-layer="beanie" value="IMAGES/ACCESSORIES/MASCbeanie.png">
+    <label for="beanie">Slouchy beanie</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="chainnecklace" data-layer="chainnecklace" value="IMAGES/ACCESSORIES/MASCchainnecklace.png">
+    <label for="chainnecklace">Silver chain</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="crossnecklace" data-layer="crossnecklace" value="IMAGES/ACCESSORIES/MASCcrossnecklace.png">
+    <label for="crossnecklace">Silver cross</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="mustache" data-layer="mustache" value="IMAGES/ACCESSORIES/MASCmustache.png">
+    <label for="mustache">That horrid 'stache</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="yankeeshat" data-layer="yankeeshat" value="IMAGES/ACCESSORIES/MASCyankeeshat.png">
+    <label for="yankeeshat">Yankees cap</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="bracelet" data-layer="bracelet" value="IMAGES/ACCESSORIES/MASCbracelet.png">
+    <label for="bracelet">Chain bracelet</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="tattoocross" data-layer="tattoocross" value="IMAGES/ACCESSORIES/MASCtattoocross.png">
+    <label for="tattoocross">Cross tattoo</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="watch" data-layer="watch" value="IMAGES/ACCESSORIES/MASCwatch.png">
+    <label for="watch">Extremely professional watch for extremely professional endeavors</label>
+  </div>
+
+    <div>
+    <input type="checkbox" id="chromecollection" data-layer="chromecollection" value="IMAGES/ACCESSORIES/MASCchromecollection.png">
+    <label for="chromecollection">Chrome set</label>
+  </div>
+</div>
+
+<div class="jackets">
+  <label for="jackets" class="labell">Jackets:</label>
+
+  <div>
+    <input type="radio" id="essentialshoodie" name="jackets" value="IMAGES/JACKETS/MASCessentialshoodie.png">
+    <label for="essentialshoodie">Essentials hoodie</label>
+  </div>
+
+  <div>
+    <input type="radio" id="jeanjacket" name="jackets" value="IMAGES/JACKETS/MASCjeanjacket.png">
+    <label for="jeanjacket">Jean jacket</label>
+  </div>
+
+  <div>
+    <input type="radio" id="leatherjacket" name="jackets" value="IMAGES/JACKETS/MASCleatherjacket.png">
+    <label for="leatherjacket">Leather jacket</label>
+  </div>
+
+  <div>
+    <input type="radio" id="vest" name="jackets" value="IMAGES/JACKETS/MASCvest.png">
+    <label for="vest">Navy puffer vest (tech guy classic)</label>
+  </div>
+
+  <div>
+    <input type="radio" id="allsaintsbomber" name="jackets" value="IMAGES/JACKETS/MASCallsaintsbomber.png">
+    <label for="allsaintsbomber">Superdry bomber jacket</label>
+  </div>
+
+  <div>
+    <input type="radio" id="nojackets" name="jackets" value="">
+    <label for="nojackets">No outerwear</label>
+  </div>
+</div>
+
+<div class="bag">
+  <label for="bag" class="labell">Hobbies:</label>
+    <div>
+    <input type="radio" id="totebag" name="bag" value="IMAGES/BAGS/MASCtotebag.png" class="flip-horizontal">
+    <label for="totebag">Literary larper</label>
+  </div>
+
+  <div>
+    <input type="radio" id="alobag" name="bag" value="IMAGES/BAGS/FEMalobag.png">
+    <label for="alobag">Equinox member</label>
+  </div>
+
+    <div>
+    <input type="radio" id="mimi" name="bag" value="IMAGES/OTHER/mimis.png">
+    <label for="mimi">Instagram food influencer</label>
+  </div>
+
+    <div>
+    <input type="radio" id="DJ" name="bag" value="IMAGES/OTHER/DJboard.png">
+    <label for="DJ">Modern-age Mozart</label>
+  </div>
+
+  <div>
+    <input type="radio" id="nothing" name="bag" value="">
+    <label for="nothing">On your 8th gap year</label>
+  </div>
+</div>
+</div>
+
+<div class="container1">
+
+<div class="other">
+  <label for="other" class="labell">Thou urban familiar:</label>
+
+  <div>
+    <input type="radio" id="dog3" name="other" value="IMAGES/OTHER/FEMdog3.png">
+    <label for="dog3">Silly little dog</label>
+  </div>
+
+  <div>
+    <input type="radio" id="dog2" name="other" value="IMAGES/OTHER/FEMdog2.png">
+    <label for="dog2">Silly little dog but liquorice-flavored</label>
+  </div>
+
+    <div>
+    <input type="radio" id="dog1" name="other" value="IMAGES/OTHER/FEMdog1.png">
+    <label for="dog1">Italian greyhound with silly little jacket</label>
+  </div>
+
+      <div>
+    <input type="radio" id="nodog" name="other" value="">
+    <label for="nodog">I'm allergic to dogs.</label>
+  </div>
+
+</div>
+
+<div class="drink">
+  <label for="drink" class="labell">Feeling thirsty?:</label>
+
+  <div>
+    <input type="radio" id="matcha" name="drink" value="IMAGES/OTHER/FEMmatcha.png">
+    <label for="matcha">Matcha</label>
+  </div>
+
+  <div>
+    <input type="radio" id="vape" name="drink" value="IMAGES/OTHER/vape.png">
+    <label for="vape">Flavored air</label>
+  </div>
+
+  <div>
+    <input type="radio" id="twee" name="drink" value="IMAGES/OTHER/twee.png">
+    <label for="twee">Mysterious drink</label>
+  </div>
+
+    <div>
+    <input type="radio" id="nodrink" name="drink" value="">
+    <label for="nodrink">No thanks.</label>
+  </div>
+  
+</div>
+
+<form action="/action_page.php">
+  
+  <label for="powers" class="labell">Choose your special power:</label>
+<br>
+
+  <select id="powers" name="powers">
+    <option value="pick">Pick one...</option>
+    <option value="accent">I have an extremely strong LA influencer accent.</option>
+    <option value="slowwalker">I will take up the whole sidewalk and walk extremely slowly.</option>
+    <option value="loud">I will talk and laugh super loudly in small, enclosed areas.</option>
+    <option value="Ltrain">The L train is my favorite and only line I use.</option>
+    <option value="UO">I rep Urban Outfitters on the daily.</option>
+    <option value="FP">I'm practically a walking Free People sponsor.</option>
+    <option value="soho">I have the ability to sniff out every SoHo pop-up ever.</option>
+    <option value="queer">Despite being white I am also a queer person, meaning my queerness totally overshadows my white privilege.</option>
+    <option value="aave">I love using AAVE as a gay white man.</option>
+    <option value="tiktok">I'm a micro micro influencer on TikTok.</option>
+    <option value="septum">I have a septum piercing and no it didn't hurt</option>
+    <option value="finance">I'm a finance bro.</option>
+    <option value="tech">I'm a tech bro.</option>
+    <option value="skinny">I'm skinny.</option>
+
+  </select>
+</form>
+
+<div class="backgrounds">
+    <label for="backgrounds" class="labell">Your Natural Environment:</label>
+  <div>
+    <input type="radio" id="sohoo" name="backgrounds" value="IMAGES/BKG/sohobkg.png">
+    <label for="sohoo">Soho</label>
+  </div>
+
+  <div>
+    <input type="radio" id="hudson" name="backgrounds" value="IMAGES/BKG/hudsonriverbkg.png">
+    <label for="hudson">A run alongside the Hudson</label>
+  </div>
+
+    <div>
+    <input type="radio" id="wesvill" name="backgrounds" value="IMAGES/BKG/brownstonebkg.png">
+    <label for="wesvill">West Village</label>
+  </div>
+
+    <div>
+    <input type="radio" id="trendy" name="backgrounds" value="IMAGES/BKG/mimibkg.png">
+    <label for="trendy">Some trendy food chain</label>
+  </div>
+
+    <div>
+    <input type="radio" id="bushwick" name="backgrounds" value="IMAGES/BKG/bushwickbkg.png">
+    <label for="bushwick">Bushwick, baby!</label>
+  </div>
+
+    <div>
+    <input type="radio" id="friday" name="backgrounds" value="IMAGES/BKG/eastvilbarbkg.png">
+    <label for="friday">Friday night</label>
+  </div>
+
+    <div>
+    <input type="radio" id="nowhere" name="backgrounds" value="">
+    <label for="nowhere">Nowhere.</label>
+  </div>
+</div>
+
+
+</div>
+
+<button id="resetButton" title="Reset whole base">
+    <img src="IMAGES/greenapple.png" class="greenapple">
+  </button>
+  
+
+
+<div class="img">
+<a href="index.html" title="Homepage">
+  <img src="IMAGES/apple.png" class="thebigred">
+</a>
+</div>
+
+
+<!-- Image container -->
+<div id="imageContainer">
+<img id="baseImage" class="image-layer" src="IMAGES/MASCbodybase.png" alt="Base" style="display:block;">
+  <img id="socksImage" class="image-layer" src="" alt="other" style="display:none;">
+  <img id="shoesImage" class="image-layer" src="" alt="shoes" style="display:none;">
+  <img id="bottomsImage" class="image-layer" src="" alt="Bottoms" style="display:none;">
+  <img id="topsImage" class="image-layer" src="" alt="tops" style="display:none;">
+  <img id="jacketsImage" class="image-layer" src="" alt="jackets" style="display:none;">
+  <img id="hairImage" class="image-layer" src="" alt="hair" style="display:none;">
+  <img id="otherImage" class="image-layer" src="" alt="other" style="display:none;">
+  <img id="drinkImage" class="image-layer" src="" alt="other" style="display:none;">
+  <img id="bagImage" class="image-layer" src="" alt="other" style="display:none;">
+  <img id="backgroundsImage" class="image-layer" src="" alt="backgrounds" style="display:none;">
+
+
+</div>
+
+<script>
+
+  const resetButton = document.getElementById('resetButton');
+
+  const choice1Buttons = document.querySelectorAll('input[name="choice1"]');
+  const hairButtons = document.querySelectorAll('input[name="hair"]');
+  const shoesButtons = document.querySelectorAll('input[name="shoes"]');
+  const bottomsButtons = document.querySelectorAll('input[name="bottoms"]');
+  const topsButtons = document.querySelectorAll('input[name="tops"]');
+  const jacketsButtons = document.querySelectorAll('input[name="jackets"]');
+  const otherButtons = document.querySelectorAll('input[name="other"]');
+  const drinkButtons = document.querySelectorAll('input[name="drink"]');
+  const bagButtons = document.querySelectorAll('input[name="bag"]');
+  const socksButtons = document.querySelectorAll('input[name="socks"]');
+  const backgroundsButtons = document.querySelectorAll('input[name="backgrounds"]');
+
+  const imageContainer = document.getElementById('imageContainer');
+  const baseImage = document.getElementById('baseImage');
+  const hairImage = document.getElementById('hairImage');
+  const shoesImage = document.getElementById('shoesImage');
+  const bottomsImage = document.getElementById('bottomsImage');
+  const topsImage = document.getElementById('topsImage');
+  const jacketsImage = document.getElementById('jacketsImage');
+  const otherImage = document.getElementById('otherImage');
+  const drinkImage = document.getElementById('drinkImage');
+  const bagImage = document.getElementById('bagImage');
+  const socksImage = document.getElementById('socksImage');
+  const backgroundsImage = document.getElementById('backgroundsImage');
+
+
+  function createImage(id) {
+    const img = document.createElement('img');
+    img.id = id;
+    img.className = 'image-layer';
+    img.style.display = 'none';
+    imageContainer.appendChild(img);
+    return img;
+  }
+
+
+  // Reset button
+  resetButton.addEventListener('click', () => {
+    localStorage.clear();
+    
+    hairImage.style.display = 'none';
+    shoesImage.style.display = 'none';
+    bottomsImage.style.display = 'none';
+    topsImage.style.display = 'none';
+    jacketsImage.style.display = 'none';
+    otherImage.style.display = 'none';
+    drinkImage.style.display = 'none';
+    bagImage.style.display = 'none';
+    socksImage.style.display = 'none';
+    
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.checked = false;
+    });
+    
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+    
+    document.querySelectorAll('.image-layer').forEach(img => {
+      if (img.id !== 'baseImage' && img.id !== 'hairImage' && img.id !== 'shoesImage' && 
+          img.id !== 'bottomsImage' && img.id !== 'topsImage' && img.id !== 'jacketsImage' && 
+          img.id !== 'otherImage' && img.id !== 'drinkImage' && img.id !== 'bagImage' && 
+          img.id !== 'socksImage' && img.id !== 'backgroundsImage') {
+        img.remove();
+      }
+    });
+    
+    document.getElementById('powers').selectedIndex = 0;
+  });
+
+  // choice1 = masc bod
+  choice1Buttons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      baseImage.src = e.target.value;
+      baseImage.style.display = 'block';
+      baseImage.style.zIndex = '1'; // Bottom layer
+    });
+  });
+
+        // socks
+  socksButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        socksImage.style.display = 'none';
+      } else {
+        socksImage.src = e.target.value;
+        socksImage.style.display = 'block';
+        socksImage.style.zIndex = '2';
+
+      }
+    });
+  });
+
+  // hair
+  hairButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        hairImage.style.display = 'none';
+      } else {
+        hairImage.src = e.target.value;
+        hairImage.style.display = 'block';
+        hairImage.style.zIndex = '3';
+
+      }
+    });
+  });
+
+  // shoes  
+  shoesButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        shoesImage.style.display = 'none';
+      } else {
+        shoesImage.src = e.target.value;
+        shoesImage.style.display = 'block';
+        shoesImage.style.zIndex = '4';
+      }
+    });
+  });
+
+    // tops  
+  topsButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        topsImage.style.display = 'none';
+      } else { 
+        topsImage.src = e.target.value;
+        topsImage.style.display = 'block';
+        topsImage.style.zIndex = '7';
+      }
+    });
+  });
+
+  // bottoms  
+  bottomsButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        bottomsImage.style.display = 'none';
+      } else {
+        bottomsImage.src = e.target.value;
+        bottomsImage.style.display = 'block';
+        bottomsImage.style.zIndex = '5';
+      }
+    });
+  });
+
+  // jackets
+  jacketsButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        jacketsImage.style.display = 'none';
+      } else {
+        jacketsImage.src = e.target.value;
+        jacketsImage.style.display = 'block';
+        jacketsImage.style.zIndex = '8';
+        
+      }
+    });
+  });
+ 
+  // Dogs/other
+  otherButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        otherImage.style.display = 'none';
+      } else {
+        otherImage.src = e.target.value;
+        otherImage.style.display = 'block';
+        otherImage.style.zIndex = '9';
+
+      }
+    });
+  });
+
+    // drinks
+  drinkButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        drinkImage.style.display = 'none';
+      } else {
+        drinkImage.src = e.target.value;
+        drinkImage.style.display = 'block';
+        drinkImage.style.zIndex = '10';
+
+      }
+    });
+  });
+
+      // bags
+  bagButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        bagImage.style.display = 'none';
+      } else {
+        bagImage.src = e.target.value;
+        bagImage.style.display = 'block';
+        bagImage.style.zIndex = '11';
+
+      }
+    });
+  });
+
+      // bags
+  backgroundsButtons.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === "") {
+        backgroundsImage.style.display = 'none';
+      } else {
+        backgroundsImage.src = e.target.value;
+        backgroundsImage.style.display = 'block';
+        backgroundsImage.style.zIndex = '-10';
+
+      }
+    });
+  });
+
+//checkbox accessories//
+
+  const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  
+  allCheckboxes.forEach(checkbox => {
+    const layerName = checkbox.getAttribute('data-layer');
+    const img = createImage(layerName + 'Image');
+    
+    img.style.zIndex = '6';
+    
+    checkbox.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        img.src = e.target.value;
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>

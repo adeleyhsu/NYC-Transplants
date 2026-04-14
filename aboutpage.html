@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/wji3kkg.css">
+    <title>What is...?</title>
+</head>
+
+<style>
+ body {
+    background-image: url('IMAGES/slicedapplebackground.png');
+  background-color: #f6f4ce;
+
+  background-blend-mode: overlay; 
+  background-size: cover;
+  color: #623927;
+  overflow: hidden;
+}
+
+h1 {
+font-family: "fayte-pixel-hard", sans-serif;
+color: rgb(207, 15, 66);
+font-weight: 400;
+font-style: normal;
+font-size: 9em;
+position: relative;
+top: -0.7em;
+margin-left: 30px;
+margin-bottom: -8%;
+text-decoration: underline 5%;
+text-decoration-color: rgb(129, 180, 20);
+}
+
+.flex-container {
+font-family: "akzidenz-grotesk-next-pro", sans-serif;
+font-weight: 500;
+font-style: italic;
+line-height: 100%;
+font-size: 1.45em;
+position: absolute;
+margin-left: 30px; 
+display: flex;
+gap: 300px; /* Space between the divs */
+
+    text-indent: 50px;
+}
+
+.column{
+flex: 1;
+width: 500px;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: 52% 200px 200px 200px;
+  grid-template-rows: 60% auto;
+  
+}
+
+.item1{
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.item2 {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  
+}
+
+.item3{
+  grid-column-start: 4;
+  grid-row-start: 2;
+}
+.image-layer{
+  width: 190px;
+  height: 300px;
+    object-fit: cover; /* Crops the image to fit the 200x200 box */
+    object-position: center;
+    position: relative;
+}
+
+.image-layer:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+.thebigred {
+  position: fixed; 
+  top: 0; right: 0;
+  margin-right: 30px;
+  margin-top: 0.3em;
+  border-radius: 50%;
+  padding: 5px;
+  width: 140px;
+  position: absolute;
+  }
+
+  img:hover{
+          transform: scale(1.2);
+      cursor: pointer;
+
+  }
+
+</style>
+
+
+<body>
+
+    <h1>An NYC Transplant is...</h1>
+<div class="flex-container">
+<div class="column">
+  <p>...a non-native urbanite, typically from an affluent, suburbian background. </p>
+  
+<p>Although the term isn't inherently derogatory, this group has earned a bad rep among native New Yorkers. They typically come to the city with the goal to pursue elite, high-status industries such as finance, tech, media, etc. and have unrealistic expectations about urban life from what they have seen in the media. Additionally, they are the primary force behind gentrification in much of NYC's historic neighborhoods.</p>
+
+<p>I've noticed quite a few of these people adopt a certain fashion style that mirrors the fast-paced and flashy culture of what they romanticize teh city to be. In reality, much of the clothing is pretty micro-trend-y and a lame, overpriced commodification of the cultures and economic struggles they ironically choose to ignore and avoid. Ultimately, these outfits can turn out looking a little goofy.*
+</p> 
+</div>
+
+<div class="column">
+
+<p>*as a Californian suburbanite who is still in her own experimental stages of fashion, I feel a little more justified in poking fun at these people. <br> <br>
+  Some examples pulled from my TikTok:
+
+</p>
+  </div>
+</div>
+
+<div class="image-container">
+
+  <div class="item1">
+<a href="https://en.wikipedia.org/wiki/White_people">
+    <img src="IMAGES/whitepeople/whitegirl2.png" class="image-layer">
+  </a>
+  </div>
+
+    <div class="item2">
+    <a href="https://en.wikipedia.org/wiki/Social_privilege">
+    <img src="IMAGES/whitepeople/whitegirl4.png" class="image-layer">
+  </a>
+  </div>
+
+    <div class="item3">
+   <a href="https://www.merriam-webster.com/dictionary/oblivious">
+    <img src="IMAGES/whitepeople/whiteguy1.png" class="image-layer">
+  </a>
+  </div>
+
+</div>
+
+<div class="img">
+<a href="index.html" title="Homepage">
+  <img src="IMAGES/apple.png" class="thebigred">
+</a>
+ 
+</div>
+
+</body>
+</html>
